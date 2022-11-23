@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: ['@nuxtjs/tailwindcss'],
   app: {
     head: {
       titleTemplate: '%s - Crimson Rose Living',
@@ -13,4 +14,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+  tailwindcss: {
+    exposeConfig: true
+  }
 })
