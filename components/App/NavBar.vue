@@ -15,7 +15,7 @@ if (process.client) {
 </script>
 
 <template>
-  <nav class="bg-primary text-white">
+  <nav class="bg-primary text-gray-300 fixed w-full">
     <div class="lg:container mx-auto 2xl:px-48 md:px-4 flex items-center">
       <template v-if="!isMobile">
         <div class="logo w-44 max-lg:py-4">
