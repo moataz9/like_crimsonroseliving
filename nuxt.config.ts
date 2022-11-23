@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'nuxt-icon'],
+  css: ['~/assets/styles/app.scss'],
   app: {
     head: {
       titleTemplate: '%s - Crimson Rose Living',
