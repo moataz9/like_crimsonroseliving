@@ -18,7 +18,7 @@
       </p>
       <a
         href="#"
-        class="inline-block border-2 uppercase px-6 py-2 mt-12 text-red-600 border-red-600 hover:text-white hover:bg-red-600 duration-500"
+        class="inline-block border-2 uppercase tracking-widest px-6 py-2 mt-12 text-red-600 border-red-600 hover:text-white hover:bg-red-600 duration-500"
       >
         book A time With jacob
       </a>

@@ -9,6 +9,7 @@ useHead({
     <HomeHeader />
     <HomeGlance />
     <HomeFeatured />
+    <HomeBanner />
   </div>
 </template>
 
