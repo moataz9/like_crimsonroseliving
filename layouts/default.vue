@@ -5,5 +5,6 @@
     <AppNavBar />
     <slot />
     <AppContact />
+    <AppFooter />
   </div>
 </template>
