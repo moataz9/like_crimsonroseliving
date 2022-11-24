@@ -4,9 +4,9 @@ const send = () => {}
 
 <template>
   <section class="bg-gray-200 -mt-48">
-    <div class="2xl:container mx-auto py-36 2xl:px-40">
+    <div class="2xl:container mx-auto py-36 2xl:px-40 max-2xl:px-14">
       <div class="flex flex-wrap justify-between">
-        <div class="max-w-xl md:w-1/2">
+        <div class="max-w-xl md:w-1/2 max-2xl:pr-4">
           <h2 class="text-3xl capitalize">Get In touch</h2>
           <p class="mt-6 text-justify text-gray-500">
             We want to hear from you! As part of a dedicated and reliable team, we are always available
