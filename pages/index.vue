@@ -11,6 +11,7 @@ useHead({
     <HomeFeatured />
     <HomeBanner />
     <HomeChooseUs />
+    <HomeBlog />
   </div>
 </template>
 
