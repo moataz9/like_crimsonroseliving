@@ -4,5 +4,6 @@
   <div>
     <AppNavBar />
     <slot />
+    <AppContact />
   </div>
 </template>
