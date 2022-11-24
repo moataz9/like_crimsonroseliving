@@ -6,7 +6,7 @@ const send = () => {}
   <section class="bg-gray-200 -mt-48">
     <div class="2xl:container mx-auto py-36 2xl:px-40 max-2xl:px-14">
       <div class="flex flex-wrap justify-between">
-        <div class="max-w-xl md:w-1/2 max-2xl:pr-4">
+        <div class="w-full lg:max-w-[50%] lg:pr-8">
           <h2 class="text-3xl capitalize">Get In touch</h2>
           <p class="mt-6 text-justify text-gray-500">
             We want to hear from you! As part of a dedicated and reliable team, we are always available
@@ -50,7 +50,7 @@ const send = () => {}
             </button>
           </form>
         </div>
-        <div class="max-w-xl md:w-1/2">
+        <div class="w-full lg:max-w-[50%] max-lg:mt-14">
           <div class="flex flex-col shadow-lg">
             <iframe
               class="w-full h-96"

@@ -16,7 +16,7 @@
             offering excellent service to our clients.
           </p>
         </div>
-        <div class="md:w-1/4 xl:max-w-md lg:px-8 max-2xl:pr-8">
+        <div class="md:w-1/4 xl:max-w-md lg:pl-14 max-2xl:pr-8">
           <h2 class="text-gray-300 text-2xl mt-8">
             Explore<br />
             <span class="bg-red-900 h-1 rounded-sm w-[60px] block mt-5"></span>
@@ -36,7 +36,7 @@
             </li>
           </ul>
         </div>
-        <div class="md:w-1/4 xl:max-w-md lg:px-8 max-2xl:pr-8">
+        <div class="md:w-1/4 xl:max-w-md lg:pl-14 max-2xl:pr-8">
           <h2 class="text-gray-300 text-2xl mt-8">
             Projects<br />
             <span class="bg-red-900 h-1 rounded-sm w-[60px] block mt-5"></span>
@@ -56,7 +56,7 @@
             </li>
           </ul>
         </div>
-        <div class="md:w-1/4 xl:max-w-md lg:px-8 max-2xl:pr-8">
+        <div class="md:w-1/4 xl:max-w-md lg:pl-14 max-2xl:pr-8">
           <h2 class="text-gray-300 text-2xl mt-8">
             Explore<br />
             <span class="bg-red-900 h-1 rounded-sm w-[60px] block mt-5"></span>

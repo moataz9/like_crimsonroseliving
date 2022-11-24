@@ -15,8 +15,8 @@ if (process.client) {
 </script>
 
 <template>
-  <nav class="bg-primary text-gray-300 fixed w-full">
-    <div class="lg:container mx-auto 2xl:px-48 md:px-4 flex items-center">
+  <nav class="bg-primary text-gray-300 fixed z-30 w-full">
+    <div class="2xl:container mx-auto 2xl:px-48 md:px-14 flex items-center">
       <template v-if="!isMobile">
         <div class="logo w-44 max-lg:py-4">
           <NuxtLink to="/" class="h-full">
@@ -62,7 +62,7 @@ if (process.client) {
             <NuxtLink to="/contactUs">Contact us</NuxtLink>
           </li>
         </ul>
-        <ul class="social-links list-none uppercase flex justify-between w-1/12 ml-auto">
+        <ul class="social-links list-none uppercase flex justify-between ml-auto">
           <li class="px-2">
             <a href="#"><Icon name="fa:twitter" size="18" /></a>
           </li>
@@ -74,7 +74,7 @@ if (process.client) {
           </li>
         </ul>
       </template>
-      <div v-if="isMobile" class="w-full px-4">
+      <div v-if="isMobile" class="w-full px-6">
         <div class="logo py-4 flex justify-between items-center">
           <NuxtLink to="/" class="h-full w-44">
             <img src="~/assets/images/crimson-rose-logo.png" alt="crimsonLogo" class="w-full" />

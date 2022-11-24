@@ -22,9 +22,9 @@ onMounted(() => {
     <section
       class="flex text-white w-full h-full items-center justify-center text-center container mx-auto"
     >
-      <div>
-        <p class="text-lg">Fall into Luxury</p>
-        <h1 class="text-8xl">
+      <div class="max-md:px-6 text-gray-100">
+        <p class="text-2xl pb-4">Fall into Luxury</p>
+        <h1 class="md:text-8xl text-6xl">
           Custom Home Builder <br />
           <span class="bg-red-900 h-1 rounded-sm w-[60px] block mx-auto mt-5"> </span>
         </h1>

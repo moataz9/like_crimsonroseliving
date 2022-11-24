@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex flex-col shadow-lg m-4 max-w-sm relative z-10 -top-32 bg-white">
-    <div class="h-80 overflow-hidden has-hover">
+  <div class="flex flex-col shadow-lg m-4 max-w-xs relative z-10 -top-32 bg-white">
+    <div class="h-72 overflow-hidden has-hover">
       <img src="~/assets/images/glance.jpg" alt="" class="w-full h-full" />
       <span class="hover-me"></span>
     </div>
