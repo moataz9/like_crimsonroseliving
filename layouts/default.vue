@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { is } from '@babel/types'
-
 const isLoaded = ref(false)
 onMounted(() => {
   isLoaded.value = true
