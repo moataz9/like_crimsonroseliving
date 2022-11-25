@@ -1,7 +1,38 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { $use_gsap } = useNuxtApp()
+onMounted(() => {
+  $use_gsap.gsap.to('.glance h3, .glance h2', {
+    x: 0,
+    duration: 2,
+    transformOrigin: 'left',
+    scrollTrigger: {
+      start: 'top -150',
+      toggleActions: 'restart pause restart none',
+    },
+  })
+  $use_gsap.gsap.to('.glance p, .glance a', {
+    x: 0,
+    duration: 2,
+    transformOrigin: 'right',
+    scrollTrigger: {
+      start: 'top -150',
+      toggleActions: 'restart pause restart none',
+    },
+  })
+  $use_gsap.gsap.to('img', {
+    scale: 1,
+    duration: 2,
+    ease: 'power1.in',
+    scrollTrigger: {
+      start: 'top -150',
+      toggleActions: 'restart pause restart none',
+    },
+  })
+})
+</script>
 
 <template>
-  <section class="bg-gray-200 flex max-lg:flex-col w-full">
+  <section class="glance bg-gray-200 flex max-lg:flex-col w-full">
     <div class="lg:w-1/2 xl:p-40 p-14">
       <h3 class="text-sm text-red-600 uppercase">Crimson Rose at a Glance</h3>
       <h2 class="text-3xl my-6">Custom Home Builder Oakville</h2>
@@ -23,10 +54,24 @@
         book A time With jacob
       </a>
     </div>
-    <div class="lg:w-1/2 self-stretch">
+    <div class="lg:w-1/2 self-stretch overflow-hidden">
       <img src="~/assets/images/glance.jpg" alt="glance" class="h-full" />
     </div>
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.glance {
+  h3,
+  h2 {
+    @apply -translate-x-full;
+  }
+  p,
+  a {
+    @apply translate-x-full;
+  }
+  img {
+    transform: scale(20);
+  }
+}
+</style>
