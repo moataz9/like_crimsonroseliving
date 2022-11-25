@@ -22,7 +22,7 @@ onMounted(() => {
   $use_gsap.gsap.fromTo(
     navbar.value!, //
     { y: '-100%' },
-    { y: 0, duration: 2, ease: 'bounce.out' }
+    { y: 0, duration: 1, ease: 'bounce.out' }
   )
 
   $use_gsap.scrollTrigger.create({
@@ -135,7 +135,7 @@ const toggleNestedDropdowm = (target: string) => {
           </li>
         </ul>
       </template>
-      <div v-if="isMobile" class="w-full px-6">
+      <div v-if="isMobile" class="w-full max-w-screen-lg px-6">
         <div class="logo py-4 flex justify-between items-center">
           <NuxtLink to="/" class="h-full w-44">
             <img src="~/assets/images/crimson-rose-logo.png" alt="crimsonLogo" class="w-full" />
