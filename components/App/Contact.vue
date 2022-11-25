@@ -1,12 +1,23 @@
 <script setup lang="ts">
+const { $use_gsap } = useNuxtApp()
+onMounted(() => {
+  $use_gsap.gsap.to('.contact-col-left, .contact-col-right', {
+    x: 0,
+    duration: 2,
+    scrollTrigger: {
+      trigger: '.contact',
+      toggleActions: 'restart pause restart none',
+    },
+  })
+})
 const send = () => {}
 </script>
 
 <template>
-  <section class="bg-gray-200 -mt-48">
+  <section class="contact bg-gray-200 -mt-48 overflow-hidden">
     <div class="2xl:container mx-auto py-36 2xl:px-40 max-2xl:px-14">
       <div class="flex flex-wrap justify-between">
-        <div class="w-full lg:max-w-[50%] lg:pr-8">
+        <div class="contact-col-left w-full lg:max-w-[50%] lg:pr-8">
           <h2 class="text-3xl capitalize">Get In touch</h2>
           <p class="mt-6 text-justify text-gray-500">
             We want to hear from you! As part of a dedicated and reliable team, we are always available
@@ -50,7 +61,7 @@ const send = () => {}
             </button>
           </form>
         </div>
-        <div class="w-full lg:max-w-[50%] max-lg:mt-14">
+        <div class="contact-col-right w-full lg:max-w-[50%] max-lg:mt-14">
           <div class="flex flex-col shadow-lg">
             <iframe
               class="w-full h-96"
@@ -60,7 +71,9 @@ const send = () => {}
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
             <div class="bg-white p-8">
-              <h5 class="text-center text-2xl text-gray-500">217 Speers Road, Unit 4O <br />akville, Ontario L6K 0J3</h5>
+              <h5 class="text-center text-2xl text-gray-500">
+                217 Speers Road, Unit 4O <br />akville, Ontario L6K 0J3
+              </h5>
             </div>
           </div>
         </div>
@@ -69,4 +82,11 @@ const send = () => {}
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.contact-col-left {
+  @apply -translate-x-full;
+}
+.contact-col-right {
+  @apply translate-x-full;
+}
+</style>
