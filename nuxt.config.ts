@@ -7,6 +7,7 @@ export default defineNuxtConfig({
       titleTemplate: '%s - Crimson Rose Living',
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1.0',
+      link: [{ rel: 'shortcut icon', href: '/images/crimson-rose-logo.png', type: 'image/png' }],
       meta: [
         {
           'http-equiv': 'x-ua-compatible',
@@ -19,6 +20,6 @@ export default defineNuxtConfig({
     exposeConfig: true,
   },
   build: {
-    transpile: ['gsap']
-  }
+    transpile: ['gsap'],
+  },
 })
