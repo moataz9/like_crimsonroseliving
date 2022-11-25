@@ -15,7 +15,7 @@ onMounted(() => {
 
 <template>
   <section
-    class="banner bg-fixed bg-cover relative"
+    class="banner bg-fixed bg-cover relative overflow-hidden"
     style="background-image: url(/_nuxt/assets/images/glance.jpg)"
   >
     <span class="bg-[rgba(0,0,0,0.6)] absolute w-full h-full top-0 z-0"></span>
