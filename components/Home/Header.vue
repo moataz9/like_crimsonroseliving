@@ -1,8 +1,32 @@
 <script setup lang="ts">
 const videoWidth = ref<number>(1000) // random number
 const videoAspectRidio = 1920 / 1080
+
+const { $use_gsap } = useNuxtApp()
+
 onMounted(() => {
   videoWidth.value = window?.innerHeight * videoAspectRidio
+
+  $use_gsap.tl
+    .fromTo(
+      'header p', //
+      {
+        x: -1000,
+        opacity: 0,
+        scale: 20,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        scale: 1,
+      }
+    )
+    .fromTo(
+      'h1', //
+      { x: 1000, opacity: 0, scale: 20 },
+      { x: 0, opacity: 1, scale: 1 },
+      '-=100%'
+    )
 })
 </script>
 
