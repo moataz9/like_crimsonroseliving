@@ -1,12 +1,34 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { $use_gsap } = useNuxtApp()
+onMounted(() => {
+  $use_gsap.gsap.to('.featured h2', {
+    y: 0,
+    opacity: 1,
+    duration: 2,
+    scrollTrigger: {
+      start: 'top -150',
+      toggleActions: 'restart pause restart none',
+    },
+  })
+  $use_gsap.gsap.to('.featured .desc, .featured-card', {
+    duration: 2,
+    'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
+    stagger: 0.5,
+    scrollTrigger: {
+      start: 'top -150',
+      toggleActions: 'restart pause restart none',
+    },
+  })
+})
+</script>
 
 <template>
-  <section class="2xl:container mx-auto my-36">
+  <section class="featured 2xl:container mx-auto my-36">
     <h2 class="text-3xl capitalize text-center">
       featued projects <br />
       <span class="bg-red-900 h-1 rounded-sm w-[60px] block mx-auto mt-3"></span>
     </h2>
-    <div class="capitalize text-gray-500 xl:px-96 px-14 text-justify">
+    <div class="desc capitalize text-gray-500 xl:px-96 px-14 text-justify">
       <p class="mt-6">
         For our clients, we do our utmost to create a strong sense of belonging to each space. The minute
         you step into the space, you feel this sense and are surrounded by an environment of convenience
@@ -22,7 +44,7 @@
     </div>
 
     <div class="mt-36 md:flex xl:px-64 px-3">
-      <div class="m-2 md:w-1/3 has-hover">
+      <div class="featured-card m-2 md:w-1/3 has-hover">
         <img
           src="~/assets/images/featured-1.jpg"
           alt="featured-1"
@@ -32,7 +54,7 @@
           <NuxtLink :to="{ name: 'portfolio-id', params: { id: 'featured-1' } }">Featured 1</NuxtLink>
         </span>
       </div>
-      <div class="m-2 md:w-1/3 has-hover">
+      <div class="featured-card m-2 md:w-1/3 has-hover">
         <img
           src="~/assets/images/featured-2.jpg"
           alt="featured-2"
@@ -42,7 +64,7 @@
           <NuxtLink :to="{ name: 'portfolio-id', params: { id: 'featured-2' } }">Featured 2</NuxtLink>
         </span>
       </div>
-      <div class="m-2 md:w-1/3 has-hover">
+      <div class="featured-card m-2 md:w-1/3 has-hover">
         <img
           src="~/assets/images/featured-3.jpg"
           alt="featured-3"
@@ -56,7 +78,7 @@
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .has-hover {
   @apply relative;
   .hover-me {
@@ -67,6 +89,16 @@
       background: rgba(0, 0, 0, 0.6);
       @apply scale-100;
     }
+  }
+}
+.featured {
+  h2 {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  .desc,
+  &-card {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   }
 }
 </style>
