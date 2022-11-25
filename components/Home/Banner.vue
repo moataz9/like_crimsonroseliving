@@ -1,8 +1,21 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { $use_gsap } = useNuxtApp()
+onMounted(() => {
+  $use_gsap.gsap.to('.banner h3,.banner p, .banner a', {
+    x: 0,
+    scale: 1,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: '.banner',
+      toggleActions: 'restart none restart none',
+    },
+  })
+})
+</script>
 
 <template>
   <section
-    class="bg-fixed bg-cover relative"
+    class="banner bg-fixed bg-cover relative"
     style="background-image: url(/_nuxt/assets/images/glance.jpg)"
   >
     <span class="bg-[rgba(0,0,0,0.6)] absolute w-full h-full top-0 z-0"></span>
@@ -22,4 +35,12 @@
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.banner {
+  h3,
+  p,
+  a {
+    transform: scale(20) translateX(-100px);
+  }
+}
+</style>
