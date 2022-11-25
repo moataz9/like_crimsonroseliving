@@ -6,7 +6,7 @@ onMounted(() => {
     duration: 2,
     transformOrigin: 'left',
     scrollTrigger: {
-      start: 'top -150',
+      trigger: '.glance',
       toggleActions: 'restart pause restart none',
     },
   })
@@ -15,7 +15,7 @@ onMounted(() => {
     duration: 2,
     transformOrigin: 'right',
     scrollTrigger: {
-      start: 'top -150',
+      trigger: '.glance',
       toggleActions: 'restart pause restart none',
     },
   })
@@ -24,7 +24,7 @@ onMounted(() => {
     duration: 2,
     ease: 'power1.in',
     scrollTrigger: {
-      start: 'top -150',
+      trigger: '.glance',
       toggleActions: 'restart pause restart none',
     },
   })

@@ -15,7 +15,7 @@ onMounted(() => {
     'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
     stagger: 0.5,
     scrollTrigger: {
-      start: 'top -150',
+      trigger: '.featured',
       toggleActions: 'restart pause restart none',
     },
   })
