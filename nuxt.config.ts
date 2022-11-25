@@ -16,6 +16,9 @@ export default defineNuxtConfig({
     },
   },
   tailwindcss: {
-    exposeConfig: true
+    exposeConfig: true,
+  },
+  build: {
+    transpile: ['gsap']
   }
 })
