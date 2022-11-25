@@ -1,10 +1,30 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { $use_gsap } = useNuxtApp()
+onMounted(() => {
+  $use_gsap.gsap.to('.footer-col', {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    duration: 1,
+    // stagger: 0.3,
+    scrollTrigger: {
+      trigger: '.footer',
+      toggleActions: 'restart none restart none',
+    },
+  })
+  $use_gsap.gsap.to('.footer-copy-rights', {
+    delay: 3,
+    y: 0,
+    opacity: 1,
+  })
+})
+</script>
 
 <template>
-  <footer class="bg-primary">
+  <footer class="footer bg-primary overflow-hidden">
     <div class="2xl:container mx-auto pt-32 2xl:px-40 px-14">
       <div class="flex flex-wrap justify-between">
-        <div class="md:w-1/4 xl:max-w-md max-2xl:pr-8">
+        <div class="footer-col md:w-1/4 xl:max-w-md max-2xl:pr-8">
           <img
             src="~/assets/images/crimson-rose-logo.png"
             alt="crimson log"
@@ -16,7 +36,7 @@
             offering excellent service to our clients.
           </p>
         </div>
-        <div class="md:w-1/4 xl:max-w-md lg:pl-14 max-2xl:pr-8">
+        <div class="footer-col md:w-1/4 xl:max-w-md lg:pl-14 max-2xl:pr-8">
           <h2 class="text-gray-300 text-2xl mt-8">
             Explore<br />
             <span class="bg-red-900 h-1 rounded-sm w-[60px] block mt-5"></span>
@@ -36,7 +56,7 @@
             </li>
           </ul>
         </div>
-        <div class="md:w-1/4 xl:max-w-md lg:pl-14 max-2xl:pr-8">
+        <div class="footer-col md:w-1/4 xl:max-w-md lg:pl-14 max-2xl:pr-8">
           <h2 class="text-gray-300 text-2xl mt-8">
             Projects<br />
             <span class="bg-red-900 h-1 rounded-sm w-[60px] block mt-5"></span>
@@ -56,7 +76,7 @@
             </li>
           </ul>
         </div>
-        <div class="md:w-1/4 xl:max-w-md lg:pl-14 max-2xl:pr-8">
+        <div class="footer-col md:w-1/4 xl:max-w-md lg:pl-14 max-2xl:pr-8">
           <h2 class="text-gray-300 text-2xl mt-8">
             Explore<br />
             <span class="bg-red-900 h-1 rounded-sm w-[60px] block mt-5"></span>
@@ -84,7 +104,9 @@
           </ul>
         </div>
       </div>
-      <div class="mt-8 flex flex-wrap text-gray-300 pb-6 pt-4 border-t-gray-600 border-t max-sm:text-center">
+      <div
+        class="footer-copy-rights mt-8 flex flex-wrap text-gray-300 pb-6 pt-4 border-t-gray-600 border-t max-sm:text-center"
+      >
         <p>&copy; {{ new Date().getFullYear() }} Crimson Rose Living. All rights reserved</p>
         <ul class="social-links list-none uppercase flex justify-between ml-auto">
           <li class="px-2 duration-300 hover:text-red-600">
@@ -102,4 +124,14 @@
   </footer>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.footer {
+  &-col {
+    @apply -translate-y-60;
+    transform: scale(20);
+  }
+  &-copy-rights {
+    @apply translate-y-full opacity-0;
+  }
+}
+</style>
