@@ -31,20 +31,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="min-w-[98vw] overflow-x-hidden bg-[#757575] h-[100vh]">
+  <header class="min-w-[98vw] overflow-hidden bg-[#757575] h-[100vh] relative">
     <ClientOnly>
-      <!-- autoplay -->
-      <!-- <video
+      <video
+        autoplay
         class="home-video"
         :style="`min-width: ${videoWidth}px`"
         src="~/assets/videos/home-crismon-video.mp4"
         loop
         muted
         disablePictureInPicture
-      ></video> -->
+      ></video>
     </ClientOnly>
     <section
-      class="flex text-white w-full h-full items-center justify-center text-center container mx-auto"
+      class="flex text-white min-w-full h-full items-center justify-center text-center container mx-auto absolute z-20 top-0 right-0 left-0 bg-[rgba(0,0,0,0.6)]"
     >
       <div class="max-md:px-6 text-gray-100">
         <p class="text-2xl pb-4">Fall into Luxury</p>
