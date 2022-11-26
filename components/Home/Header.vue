@@ -7,9 +7,21 @@ const { $use_gsap } = useNuxtApp()
 onMounted(() => {
   videoWidth.value = window?.innerHeight * videoAspectRidio
 
-  $use_gsap.tl
+  const headerTimeLine = $use_gsap.gsap.timeline({
+    defaults: {
+      duration: 1.3,
+      delay: 0.2,
+    },
+    scrollTrigger: {
+      trigger: '.home-header section',
+      start: 'top 90%',
+      toggleActions: 'restart none restart none',
+    },
+  })
+
+  headerTimeLine
     .fromTo(
-      'header p', //
+      '.home-header p', //
       {
         x: -1000,
         opacity: 0,
@@ -22,7 +34,7 @@ onMounted(() => {
       }
     )
     .fromTo(
-      'h1', //
+      '.home-header h1', //
       { x: 1000, opacity: 0, scale: 20 },
       { x: 0, opacity: 1, scale: 1 },
       '-=100%'
@@ -31,7 +43,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="min-w-[98vw] overflow-hidden bg-[#757575] h-[100vh] relative">
+  <header class="home-header min-w-[98vw] overflow-hidden bg-[#757575] h-[100vh] relative">
     <ClientOnly>
       <video
         autoplay
