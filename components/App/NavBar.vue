@@ -131,7 +131,7 @@ const toggleNestedDropdowm = (target: string) => {
           </li>
         </ul>
       </template>
-      <div v-if="isMobile" class="w-full max-w-screen-lg px-6">
+      <div v-if="isMobile" class="w-full max-w-full px-6">
         <div class="logo py-4 flex justify-between items-center">
           <NuxtLink to="/" class="h-full w-44">
             <img src="~/assets/images/crimson-rose-logo.png" alt="crimsonLogo" class="w-full" />
