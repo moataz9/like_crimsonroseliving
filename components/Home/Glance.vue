@@ -37,7 +37,7 @@ onMounted(() => {
   )
 
   glanceAnimation.fromTo(
-    'img',
+    '.glance img',
     {
       clipPath: `clip-path: polygon(
         29.29% 31.55%,
