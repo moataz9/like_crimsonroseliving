@@ -36,17 +36,17 @@ const toggleMobileDropDown = () => {
   }
 }
 
-const onMobDropdownEnter = (el: HTMLElement) => {
-  $use_gsap.gsap.fromTo(
-    el, //
-    { scaleY: 0 },
-    { scaleY: 1, duration: 0.5, transformOrigin: 'top' }
-  )
-}
+// const onMobDropdownEnter = (el: HTMLElement) => {
+//   $use_gsap.gsap.fromTo(
+//     el, //
+//     { scale: 0 },
+//     { scale: 1, duration: 0.5, transformOrigin: 'top right' }
+//   )
+// }
 
-const onMobDropdownLeave = (el: HTMLElement) => {
-  $use_gsap.gsap.to(el, { scaleY: 0, height: 0, duration: 0.5, transformOrigin: 'top' })
-}
+// const onMobDropdownLeave = (el: HTMLElement) => {
+//   $use_gsap.gsap.to(el, { scaleY: 0, height: 0, duration: 0.5, transformOrigin: 'top' })
+// }
 
 const toggleNestedDropdowm = (target: string) => {
   switch (target) {
@@ -141,8 +141,6 @@ const toggleNestedDropdowm = (target: string) => {
         </div>
         <transition
           leaveActiveClass="duration-500"
-          @enter="onMobDropdownEnter"
-          @beforeLeave="onMobDropdownLeave"
         >
           <ul v-if="isMobileDropdownOpened" class="links list-none uppercase">
             <li class="py-4"><NuxtLink to="/">home</NuxtLink></li>
@@ -158,8 +156,6 @@ const toggleNestedDropdowm = (target: string) => {
               </div>
               <transition
                 leaveActiveClass="duration-400"
-                @enter="onMobDropdownEnter"
-                @beforeLeave="onMobDropdownLeave"
               >
                 <ul class="mobile-dropdown" v-if="showProjectsList">
                   <li><NuxtLink to="/residentialProjects">residential Projects</NuxtLink></li>
@@ -176,8 +172,6 @@ const toggleNestedDropdowm = (target: string) => {
               </div>
               <transition
                 leaveActiveClass="duration-400"
-                @enter="onMobDropdownEnter"
-                @beforeLeave="onMobDropdownLeave"
               >
                 <ul class="mobile-dropdown" v-if="showCompanyList">
                   <li><NuxtLink to="/about">about crimson rose</NuxtLink></li>
@@ -199,8 +193,6 @@ const toggleNestedDropdowm = (target: string) => {
               </div>
               <transition
                 leaveActiveClass="duration-400"
-                @enter="onMobDropdownEnter"
-                @beforeLeave="onMobDropdownLeave"
               >
                 <ul class="mobile-dropdown" v-if="showInspiredList">
                   <li><NuxtLink to="/traditional">traditional</NuxtLink></li>
