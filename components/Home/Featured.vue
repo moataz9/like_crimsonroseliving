@@ -1,24 +1,50 @@
 <script setup lang="ts">
 const { $use_gsap } = useNuxtApp()
 onMounted(() => {
-  $use_gsap.gsap.to('.featured h2', {
-    y: 0,
-    opacity: 1,
+  const featuedAnimation = $use_gsap.gsap
+
+  featuedAnimation.defaults({
     duration: 2,
-    scrollTrigger: {
-      start: 'top -150',
-      toggleActions: 'restart pause restart none',
-    },
-  })
-  $use_gsap.gsap.to('.featured .desc, .featured-card', {
-    duration: 2,
-    'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
-    stagger: 0.5,
     scrollTrigger: {
       trigger: '.featured',
       toggleActions: 'restart pause restart none',
     },
   })
+
+  featuedAnimation.fromTo(
+    '.featured h2',
+    {
+      y: -100,
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+    }
+  )
+
+  featuedAnimation.fromTo(
+    '.featured .featured-desc',
+    {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 14%, 0% 14%)',
+    },
+    {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      stagger: 0.5,
+    }
+  )
+
+  featuedAnimation.fromTo(
+    '.featured .featured-card',
+    {
+      scale: 0.3,
+    },
+    {
+      scale: 1,
+      rotate: 360,
+      stagger: 0.1,
+    }
+  )
 })
 </script>
 
@@ -28,15 +54,15 @@ onMounted(() => {
       featued projects <br />
       <span class="bg-red-900 h-1 rounded-sm w-[60px] block mx-auto mt-3"></span>
     </h2>
-    <div class="desc capitalize text-gray-500 xl:px-96 px-14 text-justify">
-      <p class="mt-6">
+    <div class="capitalize text-gray-500 xl:px-96 px-14 text-justify">
+      <p class="featured-desc mt-6">
         For our clients, we do our utmost to create a strong sense of belonging to each space. The minute
         you step into the space, you feel this sense and are surrounded by an environment of convenience
         and luxury. It is that feeling that drives our designs and creations. Our design philosophy is
         centred around three key pillars: Communication, Function and Aesthetics. Through open
         communication, the custom home design process can be seamless and extremely enjoyable.
       </p>
-      <p class="mt-6">
+      <p class="featured-desc mt-6">
         We understand the difficulties that come with building in some communities of Canada and it is
         part of our mission to guarantee that the construction experience for our clients is satisfactory
         and stress-free.
@@ -89,16 +115,6 @@ onMounted(() => {
       background: rgba(0, 0, 0, 0.6);
       @apply scale-100;
     }
-  }
-}
-.featured {
-  h2 {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  .desc,
-  &-card {
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   }
 }
 </style>
