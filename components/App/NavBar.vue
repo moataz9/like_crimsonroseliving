@@ -37,7 +37,6 @@ const toggleMobileDropDown = () => {
 }
 
 const onMobDropdownEnter = (el: HTMLElement) => {
-  console.log('enter')
   $use_gsap.gsap.fromTo(
     el, //
     { scaleY: 0 },
@@ -46,7 +45,6 @@ const onMobDropdownEnter = (el: HTMLElement) => {
 }
 
 const onMobDropdownLeave = (el: HTMLElement) => {
-  console.log('leave')
   $use_gsap.gsap.to(el, { scaleY: 0, height: 0, duration: 0.5, transformOrigin: 'top' })
 }
 
