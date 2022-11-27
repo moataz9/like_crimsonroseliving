@@ -28,7 +28,7 @@ onMounted(() => {
       </p>
     </div>
     <div class="flex flex-wrap justify-between max-md:justify-center my-12 xl:px-32 px-8">
-      <div class="choose_us-card max-w-[50%] lg:max-w-xs flex flex-col items-center px-8 mt-8">
+      <div class="choose_us-card sm:max-w-[50%] lg:max-w-xs flex flex-col items-center px-8 mt-8">
         <span class="inline-block p-8 border-2 border-red-600 rounded-full icon-hover">
           <Icon name="fa:handshake-o" size="80" class="text-red-600" />
         </span>
@@ -39,7 +39,7 @@ onMounted(() => {
           achievements.
         </p>
       </div>
-      <div class="choose_us-card max-w-[50%] lg:max-w-xs flex flex-col items-center px-8 mt-8">
+      <div class="choose_us-card sm:max-w-[50%] lg:max-w-xs flex flex-col items-center px-8 mt-8">
         <span class="inline-block p-8 border-2 border-red-600 rounded-full icon-hover">
           <Icon name="fa:check-square-o" size="80" class="text-red-600" />
         </span>
@@ -50,7 +50,7 @@ onMounted(() => {
           to work on several exclusive projects.
         </p>
       </div>
-      <div class="choose_us-card max-w-[50%] lg:max-w-xs flex flex-col items-center px-8 mt-8">
+      <div class="choose_us-card sm:max-w-[50%] lg:max-w-xs flex flex-col items-center px-8 mt-8">
         <span class="inline-block p-8 border-2 border-red-600 rounded-full icon-hover">
           <Icon name="fa:cogs" size="80" class="text-red-600" />
         </span>
@@ -61,7 +61,7 @@ onMounted(() => {
           deliver the best service possible.
         </p>
       </div>
-      <div class="choose_us-card max-w-[50%] lg:max-w-xs flex flex-col items-center px-8 mt-8">
+      <div class="choose_us-card sm:max-w-[50%] lg:max-w-xs flex flex-col items-center px-8 mt-8">
         <span class="inline-block p-8 border-2 border-red-600 rounded-full icon-hover">
           <Icon name="fa:home" size="80" class="text-red-600" />
         </span>
