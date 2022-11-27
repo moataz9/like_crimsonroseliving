@@ -1,33 +1,57 @@
 <script setup lang="ts">
 const { $use_gsap } = useNuxtApp()
 onMounted(() => {
-  $use_gsap.gsap.to('.glance h3, .glance h2', {
-    x: 0,
+  const glanceAnimation = $use_gsap.gsap
+
+  glanceAnimation.defaults({
     duration: 2,
-    transformOrigin: 'left',
     scrollTrigger: {
       trigger: '.glance',
       toggleActions: 'restart pause restart none',
     },
   })
-  $use_gsap.gsap.to('.glance p, .glance a', {
-    x: 0,
-    duration: 2,
-    transformOrigin: 'right',
-    scrollTrigger: {
-      trigger: '.glance',
-      toggleActions: 'restart pause restart none',
+
+  glanceAnimation.fromTo(
+    '.glance h3, .glance h2',
+    {
+      x: -100,
     },
-  })
-  $use_gsap.gsap.to('img', {
-    scale: 1,
-    duration: 2,
-    ease: 'power1.in',
-    scrollTrigger: {
-      trigger: '.glance',
-      toggleActions: 'restart pause restart none',
+    {
+      x: 0,
+      transformOrigin: 'left',
+      stagger: 0.3,
+    }
+  )
+
+  glanceAnimation.fromTo('.glance a', { x: 100 }, { x: 0 })
+
+  glanceAnimation.fromTo(
+    '.glance p',
+    {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 14%, 0% 14%)',
     },
-  })
+    {
+      duration: 3,
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+    }
+  )
+
+  glanceAnimation.fromTo(
+    'img',
+    {
+      clipPath: `clip-path: polygon(
+        29.29% 31.55%,
+        51.68% 15.55%,
+        75.65% 31.84%,
+        69.01% 32.23%,
+        69.43% 65.59%,
+        36.52% 65.88%,
+        36.21% 31.53%)`,
+    },
+    {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+    }
+  )
 })
 </script>
 
@@ -59,19 +83,3 @@ onMounted(() => {
     </div>
   </section>
 </template>
-
-<style lang="scss">
-.glance {
-  h3,
-  h2 {
-    @apply -translate-x-full;
-  }
-  p,
-  a {
-    @apply translate-x-full;
-  }
-  img {
-    transform: scale(20);
-  }
-}
-</style>
