@@ -19,11 +19,7 @@ onMounted(() => {
     else isMobile.value = true
   }
 
-  $use_gsap.gsap.fromTo(
-    navbar.value!, //
-    { y: '-100%' },
-    { y: 0, duration: 1, ease: 'bounce.out' }
-  )
+  $use_gsap.gsap.to(navbar.value!, { y: 0, ease: 'bounce.out' })
 
   $use_gsap.scrollTrigger.create({
     start: `top ${isMobile.value ? '-150' : '-350'}`,
@@ -76,7 +72,7 @@ const toggleNestedDropdowm = (target: string) => {
 </script>
 
 <template>
-  <nav ref="navbar" class="text-gray-300 fixed z-30 w-full duration-300">
+  <nav ref="navbar" class="text-gray-300 fixed z-30 w-full -translate-y-full duration-300">
     <div class="2xl:container mx-auto 2xl:px-48 md:px-14 flex items-center">
       <template v-if="!isMobile">
         <div class="logo w-44 max-lg:py-4">
