@@ -7,7 +7,7 @@ onMounted(() => {
     duration: 2,
     scrollTrigger: {
       trigger: '.glance',
-      toggleActions: 'restart pause restart none',
+      toggleActions: 'restart play restart none',
     },
   })
 
