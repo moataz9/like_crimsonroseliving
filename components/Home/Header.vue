@@ -13,8 +13,10 @@ onMounted(() => {
       delay: 0.2,
     },
     scrollTrigger: {
-      trigger: '.home-header section',
-      start: 'top 90%',
+      trigger: '.home-header',
+      // start: 'top 90%',
+      pin: true,
+      pinSpacing: false,
       toggleActions: 'restart none restart none',
     },
   })

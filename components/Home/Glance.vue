@@ -1,15 +1,27 @@
 <script setup lang="ts">
 const { $use_gsap } = useNuxtApp()
 onMounted(() => {
-  const glanceAnimation = $use_gsap.gsap
-
-  glanceAnimation.defaults({
-    duration: 2,
+  const glanceAnimation = $use_gsap.gsap.timeline({
+    defaults: {
+      duration: 2,
+      stagger: 0,
+    },
     scrollTrigger: {
       trigger: '.glance',
+      start: '20% center',
+      pin: true,
+      pinSpacing: false,
       toggleActions: 'restart play restart none',
     },
   })
+
+  // glanceAnimation.defaults({
+  //   duration: 2,
+  //   scrollTrigger: {
+  //     trigger: '.glance',
+  //     toggleActions: 'restart play restart none',
+  //   },
+  // })
 
   glanceAnimation.fromTo(
     '.glance h3, .glance h2',
@@ -20,10 +32,11 @@ onMounted(() => {
       x: 0,
       transformOrigin: 'left',
       stagger: 0.3,
-    }
+    },
+    0
   )
 
-  glanceAnimation.fromTo('.glance a', { x: 100 }, { x: 0 })
+  glanceAnimation.fromTo('.glance a', { x: 100 }, { x: 0 }, 0)
 
   glanceAnimation.fromTo(
     '.glance p',
@@ -31,9 +44,10 @@ onMounted(() => {
       clipPath: 'polygon(0% 0%, 100% 0%, 100% 14%, 0% 14%)',
     },
     {
-      duration: 3,
+      // duration: 3,
       clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-    }
+    },
+    0
   )
 
   glanceAnimation.fromTo(
@@ -50,13 +64,14 @@ onMounted(() => {
     },
     {
       clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-    }
+    },
+    0
   )
 })
 </script>
 
 <template>
-  <section class="glance bg-gray-200 flex max-lg:flex-col w-full">
+  <section class="glance bg-gray-200 flex max-lg:flex-col w-full relative">
     <div class="lg:w-1/2 xl:p-40 p-14">
       <h3 class="text-sm text-red-600 uppercase">Crimson Rose at a Glance</h3>
       <h2 class="text-3xl my-6">Custom Home Builder Oakville</h2>
