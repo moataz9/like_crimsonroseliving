@@ -108,7 +108,7 @@ onMounted(() => {
         class="footer-copy-rights mt-8 flex flex-wrap text-gray-300 pb-6 pt-4 border-t-gray-600 border-t max-sm:text-center"
       >
         <p>&copy; {{ new Date().getFullYear() }} Crimson Rose Living. All rights reserved</p>
-        <ul class="social-links list-none uppercase flex justify-between ml-auto">
+        <ul class="social-links list-none flex justify-between ml-auto max-ms:mx-auto max-ms:mt-4">
           <li class="px-2 duration-300 hover:text-red-600">
             <a href="#"><Icon name="fa:twitter" size="18" /></a>
           </li>
