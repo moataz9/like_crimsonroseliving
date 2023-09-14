@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# CrimsonRose Clone with Gsap Animation
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[CrismonRose app link](https://like-crimsonroseliving.netlify.app)
 
 ## Setup
 
@@ -27,7 +27,7 @@ npm run dev
 
 ## Production
 
-Build the application for production:
+Build the production application:
 
 ```bash
 npm run build
